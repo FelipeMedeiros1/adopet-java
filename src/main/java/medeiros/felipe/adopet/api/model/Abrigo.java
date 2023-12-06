@@ -5,11 +5,14 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
 import medeiros.felipe.adopet.api.dto.CadastroAbrigoDto;
 
 import java.util.List;
 import java.util.Objects;
-
+@Getter
+@EqualsAndHashCode
 @Entity
 @Table(name = "abrigos")
 public class Abrigo {
@@ -41,25 +44,5 @@ public class Abrigo {
         return Objects.equals(id, abrigo.id);
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public String getTelefone() {
-        return telefone;
-    }
-
-    public String getEmail() {
-        return email;
-    }
 
 }
